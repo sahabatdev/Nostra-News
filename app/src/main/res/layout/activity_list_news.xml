@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    tools:context=".module.list_news.ListNewsActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp"
+        android:layout_above="@+id/btn_next">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:text="Choose Country : "/>
+
+        <Spinner
+            android:id="@+id/spn_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:spinnerMode="dialog"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_prev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="PREV"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorAccent"/>
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="NEXT"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@color/colorAccent"/>
+
+    <TextView
+        android:id="@+id/tv_pages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="Page 1 from 30 pages"
+        android:layout_marginBottom="@dimen/_12sdp"/>
+
+</RelativeLayout>

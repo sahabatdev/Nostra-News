@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Nostra News</string>
+    <string name="label_loading">Loading . .</string>
 </resources>
