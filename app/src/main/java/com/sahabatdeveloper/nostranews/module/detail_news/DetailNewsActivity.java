@@ -2,6 +2,7 @@ package com.sahabatdeveloper.nostranews.module.detail_news;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ public class DetailNewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_news);
 
         getSupportActionBar().setTitle("Detail News");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         imgArticle = findViewById(R.id.img_article);
         tvTitle = findViewById(R.id.tv_title);
@@ -46,5 +48,14 @@ public class DetailNewsActivity extends AppCompatActivity {
         Type type = new TypeToken<NewsResponse.Articles>() {
         }.getType();
         return gson.fromJson(article, type);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

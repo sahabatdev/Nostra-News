@@ -93,6 +93,7 @@ public class ListNewsActivity extends AppCompatActivity implements ListNewsView{
 
     private void fillSpinner() {
         spnCountry.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,AppConfig.nameCountry));
+        spnCountry.setSelection(20);
     }
 
     @Override
