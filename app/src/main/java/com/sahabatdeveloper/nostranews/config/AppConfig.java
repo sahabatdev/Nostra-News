@@ -2,7 +2,7 @@ package com.sahabatdeveloper.nostranews.config;
 
 public class AppConfig {
     public static final String BASE_URL = "https://newsapi.org/v2/";
-    public static final String API_KEY = "014a7149b16041809f430b8f0e35ea59";
+    public static final String API_KEY = "b4a5ec7669a24636b65e5f31e3b76d7b";
     public static final String CATEGORY_NEWS = "technology";
     public static final String[] codeCountry = {
             "ae","ar","at","au","be","bg","br","ca","ch","cn","co","cu","cz","de","eg","fr","gb","gr","hk","hu","id","ie","il","in","it","jp","kr","lt","lv","ma","mx","my","ng","nl","no","nz","ph","pl","pt","ro","rs","ru","sa","se","sg","si","sk","th","tr","tw","ua","us","ve","za"
