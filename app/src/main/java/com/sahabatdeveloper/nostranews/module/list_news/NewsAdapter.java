@@ -1,6 +1,7 @@
 package com.sahabatdeveloper.nostranews.module.list_news;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.sahabatdeveloper.nostranews.R;
 import com.sahabatdeveloper.nostranews.model.NewsResponse;
+import com.sahabatdeveloper.nostranews.module.detail_news.DetailNewsActivity;
 
 import java.util.List;
 
@@ -32,12 +35,21 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.ViewHolder holder, int i) {
-        NewsResponse.Articles article = listArticle.get(i);
+        final NewsResponse.Articles article = listArticle.get(i);
 
         holder.tvTitle.setText(article.getTitle());
         holder.tvAuthor.setText(article.getAuthor());
         holder.tvDescription.setText(article.getDescription());
         Glide.with(context).load(article.getUrlToImage()).into(holder.imgArticle);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String data = (new Gson()).toJson(article);
+                Intent intent = new Intent(context, DetailNewsActivity.class);
+                intent.putExtra("article",data);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
